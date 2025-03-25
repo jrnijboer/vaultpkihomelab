@@ -5,7 +5,7 @@ resource "vault_pki_secret_backend_role" "cert_role" {
   ttl              = 3600
   allow_ip_sans    = true
   key_type         = "ec"
-  key_bits         = 4096
+  key_bits         = 256
   allowed_domains  = ["home"]
   allow_subdomains = true
   allow_localhost  = true
@@ -17,7 +17,7 @@ resource "vault_pki_secret_backend_role" "nomad_cert_role" {
   ttl              = 3600
   allow_ip_sans    = true
   key_type         = "ec"
-  key_bits         = 4096
+  key_bits         = 256
   allowed_domains  = ["global.nomad", "home"]
   allow_subdomains = true
   allow_localhost  = true
@@ -29,7 +29,7 @@ resource "vault_pki_secret_backend_role" "consul_cert_role" { #todo: edit to onl
   ttl              = 3600
   allow_ip_sans    = true
   key_type         = "ec"
-  key_bits         = 4096
+  key_bits         = 256
   allowed_domains  = ["dc1.consul", "home"]
   allow_subdomains = true
   allow_localhost  = true
