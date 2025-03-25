@@ -17,7 +17,7 @@ terraform {
     tenant_id            = "f1c48361-ecf4-42f7-8179-35b6c5836975"
     use_azuread_auth     = true
     client_id            = "280d3758-d450-449d-8919-09cde5ee1ab3"
-    client_secret        = "" # https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Credentials/appId/280d3758-d450-449d-8919-09cde5ee1ab3/isMSAApp~/false
+    client_secret        = "" # in vault: /v1/secrets/data/projects/vaultpkihomelab
   }
 }
 
