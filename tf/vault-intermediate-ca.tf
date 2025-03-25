@@ -3,8 +3,8 @@ resource "vault_mount" "pki_intermediate" {
   type        = "pki"
   description = "Intermediate ca for homelab"
 
-  default_lease_ttl_seconds = 3600
-  max_lease_ttl_seconds = 2592000 # 30d
+  default_lease_ttl_seconds = 86400   # 24h
+  max_lease_ttl_seconds     = 2592000 # 30d
 }
 
 resource "vault_pki_secret_backend_intermediate_cert_request" "intermediate_csr" {
@@ -12,6 +12,9 @@ resource "vault_pki_secret_backend_intermediate_cert_request" "intermediate_csr"
   backend     = vault_mount.pki_intermediate.path
   type        = "internal"
   common_name = "nijboer.home Intermediate Authority"
+  # key_type    = "rsa"
+  key_type = "ec"
+  key_bits = 256
   #   organization = "nijboer homelab"
 }
 
