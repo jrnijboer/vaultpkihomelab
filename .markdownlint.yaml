@@ -1,0 +1,4 @@
+# Markdownlint rules: https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md
+MD013:
+  # disable line length, but use your healthy farmer brain
+  line_length: -1

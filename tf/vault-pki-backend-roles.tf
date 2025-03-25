@@ -4,7 +4,7 @@ resource "vault_pki_secret_backend_role" "cert_role" {
   name             = "home_cert_request"
   ttl              = 3600
   allow_ip_sans    = true
-  key_type         = "rsa"
+  key_type         = "ec"
   key_bits         = 4096
   allowed_domains  = ["home"]
   allow_subdomains = true
@@ -16,9 +16,9 @@ resource "vault_pki_secret_backend_role" "nomad_cert_role" {
   name             = "nomad_cert_request"
   ttl              = 3600
   allow_ip_sans    = true
-  key_type         = "rsa"
+  key_type         = "ec"
   key_bits         = 4096
-  allowed_domains  = ["global.nomad","home"]
+  allowed_domains  = ["global.nomad", "home"]
   allow_subdomains = true
   allow_localhost  = true
 }
@@ -28,9 +28,9 @@ resource "vault_pki_secret_backend_role" "consul_cert_role" { #todo: edit to onl
   name             = "consul_cert_request"
   ttl              = 3600
   allow_ip_sans    = true
-  key_type         = "rsa"
+  key_type         = "ec"
   key_bits         = 4096
-  allowed_domains  = ["dc1.consul","home"]
+  allowed_domains  = ["dc1.consul", "home"]
   allow_subdomains = true
   allow_localhost  = true
   #key_usage = ["KeyUsageDigitalSignature ","KeyUsageKeyEncipherment", ]
