@@ -1,10 +1,10 @@
 terraform {
-  required_version = ">=1.9.5"
+  required_version = ">=1.11.0"
 
   required_providers {
     vault = {
       source  = "hashicorp/vault"
-      version = "4.5.0"
+      version = "4.8.0"
     }
   }
   backend "azurerm" {

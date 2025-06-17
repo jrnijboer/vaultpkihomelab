@@ -12,7 +12,9 @@ resource "vault_approle_auth_backend_role_secret_id" "approle_vaultagent_consult
 resource "vault_policy" "policy_vaultagent_consultemplate" {
   name   = "policy-vaultagent-consultemplate"
   policy = <<EOT
-
+path "pki-intermediate/issue/*" {
+  capabilities = ["create", "read", "update", "delete", "list"]
+}
 EOT
 }
 
