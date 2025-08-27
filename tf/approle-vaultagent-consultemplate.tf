@@ -19,7 +19,7 @@ EOT
 }
 
 output "role_id_approle_consulcontent" {
-  description = "The role ID of consulcontent approle"
+  description = "The role ID of vaultagent consultemplate approle"
   value       = vault_approle_auth_backend_role.approle_vaultagent_consultemplate.role_id
 }
 
@@ -36,8 +36,8 @@ resource "vault_kv_secret_v2" "consulcontent_secret" {
   )
   custom_metadata {
     data = {
-      Source      = "Terraform: magister.vault.content"
-      Description = "AppRole login for consulcontent"
+      Source      = "https://github.com/jrnijboer/vaultpkihomelab/blob/master/tf/approle-vaultagent-consultemplate.tf"
+      Description = "AppRole login for vault agent"
       Policies    = join(",", [for s in vault_approle_auth_backend_role.approle_vaultagent_consultemplate.token_policies : s])
     }
   }
