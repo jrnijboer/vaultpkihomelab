@@ -32,5 +32,23 @@ resource "vault_policy" "mijnhost-certbot-policy" {
 path "secrets/data/certificates/*" {
   capabilities = ["create", "read", "update", "delete", "list"]
 }
+
+path "secrets/data/projects/mijnhost-certbot" {
+  capabilities = ["read", "list"]
+}
+
+path "secrets/data/projects/mijnhost-certbot/*" {
+  capabilities = ["read", "list"]
+}
+
+path "secrets-approles/data/certbot" {
+  capabilities = ["read", "list"]
+}
+
+path "secrets-approles/data/certbot/*" {
+  capabilities = ["read", "list"]
+}
+
+
 EOT
 }
