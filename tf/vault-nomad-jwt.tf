@@ -26,6 +26,7 @@ resource "vault_jwt_auth_backend_role" "nomad-workloads" {
   token_period           = 1800
   token_explicit_max_ttl = 0
 }
+
 resource "vault_policy" "nomad-workloads-policy" {
   name   = "nomad-workloads-policy"
   policy = <<EOT
