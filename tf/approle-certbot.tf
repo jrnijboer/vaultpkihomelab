@@ -12,7 +12,7 @@ resource "vault_approle_auth_backend_role_secret_id" "approle_certbot_secret" {
 resource "vault_policy" "policy_certbot" {
   name   = "policy-certbot"
   policy = <<EOT
-path "pki-intermediate/issue/*" {
+path "secrets/data/certificates/*" {
   capabilities = ["create", "read", "update", "delete", "list"]
 }
 EOT
