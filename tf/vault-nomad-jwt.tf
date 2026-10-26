@@ -48,5 +48,17 @@ path "secrets/metadata/*" {
 path "secrets/data/*" {
   capabilities = ["list", "read"]
 }
+
+path "pki-intermediate/issue/*" {
+  capabilities = ["update"]
+}
+
+path "pki-intermediate/cert/ca" {
+  capabilities = ["read"]
+}
+
+path "pki-intermediate/ca_chain" {
+  capabilities = ["read"]
+}
 EOT
 }
